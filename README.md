@@ -1,3 +1,3 @@
 # Project2a
-##Daniel Della-Rose
+## Daniel Della-Rose
 ## Jim Petersen
