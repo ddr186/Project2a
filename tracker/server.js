@@ -1,11 +1,23 @@
+// Externals
 const express = require('express')
 const mongoose = require('mongoose')
+
+//includes
+const bookController = require('./controllers/book_controller.js')
 
 // CONFIGURATION
 const app = express()
 require('dotenv').config()
 const PORT = process.env.PORT
 
+// middleware
+app.use(express.json()) //use .json(), not .urlencoded()
+app.use(express.static('public'))
+
+// route use
+app.use('/book', bookController)
+
+// database
 const MONGODB_URI = process.env.MONGODB_URI
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
@@ -25,14 +37,6 @@ mongoose.connection.on('connected', () =>
 )
 mongoose.connection.on('disconnected', () => console.log('mongo disconnected'))
 
-// middleware
-app.use(express.json()) //use .json(), not .urlencoded()
-app.use(express.static('public'))
-
-
-// Routes
-// const trackerController = require('./controllers/tracker_controller.js')
-// app.use('/tracker', trackerController)
 
 // LISTENER
 app.listen(PORT, () => {
