@@ -1,0 +1,42 @@
+h1 {
+  text-align: center;
+  text-shadow: 1px 1px 2px black;
+  color: green;
+}
+
+h2 {
+  text-align: center;
+  text-shadow: 1px 1px 2px black;
+  color: green;
+}
+form {
+  text-align: center;
+
+}
+
+img {
+  width: 200px;
+  display: block;
+}
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+li {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 28%;
+  margin: 2%;
+  background: #12121212;
+  box-sizing: border-box;
+  padding: 2%;
+  box-shadow: 2px 2px 4px green;
+}
+button {
+  background: lightblue;
+  padding: 0.5em;
+  margin: 0.5em;
+}
