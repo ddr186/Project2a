@@ -73,7 +73,7 @@ render = () => {
     <form onSubmit= {this.handleSubmit}>
       <label htmlFor="name">Name:</label>
       <input type="text" id="name" onChange={this.handleChange}/>
-      <label htmlFor="species">Cost:</label>
+      <label htmlFor="cost">Cost:</label>
       <input type="text" id="cost" onChange={this.handleChange}/>
       <label htmlFor="img">Image:</label>
       <input type="text" id="img" onChange={this.handleChange}/>
@@ -87,6 +87,8 @@ render = () => {
             <li key={book._id}>
               {book.name} <br />
               <img src={book.img} alt={book.name} />
+              Cost: ${book.cost}<br/>
+              Lent To: {book.lentTo}
               <button value={book._id} onClick={this.deleteBook}>
                 DELETE
               </button>
@@ -95,15 +97,7 @@ render = () => {
                 <form id={book._id} onSubmit={this.updateBook}>
                   <label htmlFor="name">Name</label>
                   <input type="text" id="name" onChange={this.handleChange} value={this.state.name}/>
-                  <br />
-                  <label htmlFor="img">Image</label>
-                  <br />
-                  <input
-                    type="text"
-                    id="img"
-                    onChange={this.handleChange}
-                    value={this.state.img}
-                  />
+
                   <br />
                   <label htmlFor="cost">Cost</label>
                   <input
@@ -112,7 +106,16 @@ render = () => {
                     onChange={this.handleChange}
                     value={this.state.cost}/>
                   <br />
-                  <label htmlFor="lentTo">Cost</label>
+                  <label htmlFor="img">Image Link</label>
+                  <br />
+                  <input
+                    type="text"
+                    id="img"
+                    onChange={this.handleChange}
+                    value={this.state.img}
+                  />
+                  <br/>
+                  <label htmlFor="lentTo">Lent To:</label>
                   <input
                     type="text"
                     id="lentTo"
